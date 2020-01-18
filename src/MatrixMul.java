@@ -15,30 +15,6 @@ public class MatrixMul {
 		C1.print(1,2);
 		C2.print(1,2);
 		
-		unitTest();
-	}
-	
-	public static void unitTest(){
-		
-		Matrix A,B;
-		
-		for (int i = 15; i < 500; i += 23) {
-			for (int j = 15; j < 500; j+=25) {
-				A = Matrix.random(i,j);
-				B = Matrix.random(j,j);
-				
-				for (int k = 1; k < 500; k++) {
-					try {
-						assert(matrixMul(A,B,k).equals(A.times(B)));
-					}
-					catch (Exception e) {
-						
-					}
-				}
-			}
-		}
-		
-		System.out.println("Unit Test Passed");
 	}
 	
 	public static Matrix matrixMul(Matrix A, Matrix B, int numThreads) throws InterruptedException {
