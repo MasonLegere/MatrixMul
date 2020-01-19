@@ -22,10 +22,7 @@ private XYSeries data;
 		add(createChartPanel(), BorderLayout.CENTER);
 		setSize(640,480);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        
-
-             
+        setLocationRelativeTo(null);       
 	}
 	
 	private JPanel createChartPanel() {
@@ -37,12 +34,16 @@ private XYSeries data;
 		dataset.addSeries(data);
 		JFreeChart chart = ChartFactory.createXYLineChart(title, yAxisLabel, xAxisLabel, dataset);
 		XYPlot plot = chart.getXYPlot();
+		
+		// Adds data points to the line graph to show granularity 
         XYLineAndShapeRenderer renderer = new XYLineAndShapeRenderer();
         plot.setRenderer(renderer);
+        
 		File imageFile = new File("MatrixMultiplication.png");
         int width = 640;
         int height = 480;
-         
+        
+        // Saves the line plot in the local directory 
         try {
             ChartUtils.saveChartAsPNG(imageFile, chart, width, height);
         } catch (IOException ex) {

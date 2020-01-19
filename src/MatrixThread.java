@@ -14,8 +14,7 @@ private int startingRow, numRows;
 	}
 
 	@Override
-	public void run() {
-		
+	public void run() {	
 		for (int i = startingRow; i < numRows + startingRow; i++) {
 			for (int j = 0; j < B.getColumnDimension(); j++) {
 				C.set(i, j, dotProduct(i,j));
@@ -23,10 +22,15 @@ private int startingRow, numRows;
 		}
 	}
 	
-	private double dotProduct(int row, int col) {
+	/*
+	 * Computes the dot product between row (i) of matrix A 
+	 * and column (j) of matrix B. This operation is defined as it has already be
+	 * checked to make sure that the operation A*B is well-defined.
+	 * */
+	private double dotProduct(int i, int j) {
 		double sum = 0;
-		for (int i = 0; i < A.getColumnDimension(); i++) {
-			sum += A.get(row, i)*B.get(i, col);
+		for (int k = 0; k < A.getColumnDimension(); k++) {
+			sum += A.get(i, k)*B.get(k, j);
 		}
 		return sum;
 	}
