@@ -2,14 +2,13 @@ import Jama.Matrix;
 
 public class MatrixThread implements Runnable{
 
-private Matrix A, B;
-private static Matrix C;
+private Matrix A, B, C;
 private int startingRow, numRows;
 
-	public MatrixThread(Matrix A, Matrix B, int startingRow, int numRows) {
+	public MatrixThread(Matrix A, Matrix B, Matrix C, int startingRow, int numRows) {
 		this.A = A;
 		this.B = B;
-		this.C = new Matrix(A.getRowDimension(),B.getColumnDimension());
+		this.C = C;
 		this.startingRow = startingRow;
 		this.numRows = numRows;
 	}
@@ -22,10 +21,6 @@ private int startingRow, numRows;
 				C.set(i, j, dotProduct(i,j));
 			}
 		}
-	}
-	
-	public static Matrix getProduct() {
-		return C;
 	}
 	
 	private double dotProduct(int row, int col) {
