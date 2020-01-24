@@ -11,7 +11,7 @@ public class MatrixMul {
 	
 	public static void main(String[] args) throws InterruptedException {
 		
-		/*int[] numThreads; 	// numThreads[i] <- number of threads to use for ith multiplication
+		int[] numThreads; 	// numThreads[i] <- number of threads to use for ith multiplication
 		int[] dimA, dimB;	// dim_[0] <- row_dim, dim_[1] <- col_dim
 		String line;  		// buffer for user input
 		Scanner scanner = new Scanner(System.in);
@@ -37,7 +37,7 @@ public class MatrixMul {
 	    // Performs matrix mul. using the number of threads specified in the entries numThreads 
 		XYSeries times = runTest(numThreads, A, B);
 		LinePlot plot = new LinePlot(times);
-		plot.setVisible(true); */
+		plot.setVisible(true); 
 		
 		// Performs unit test to ensure correctness of the product
 		
